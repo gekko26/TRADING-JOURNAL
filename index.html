@@ -27,13 +27,12 @@
   html{font-size:15px;scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;display:flex}
   
-  /* SIDEBAR */
   .sidebar{width:220px;min-width:220px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:0;position:sticky;top:0;height:100vh;overflow:hidden}
   .logo{padding:20px 20px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
   .logo-mark{width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:13px;color:#0b0c0e}
   .logo-text{font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:-0.02em;color:var(--text)}
   .logo-sub{font-size:10px;color:var(--text3);margin-top:1px}
-  nav{padding:16px 10px;flex:1;display:flex;flex-direction:column;gap:2px}
+  nav{padding:16px 10px;flex:1;display:flex;flex-direction:column;gap:2px;overflow-y:auto}
   .nav-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);padding:8px 10px 4px;font-family:var(--font-mono)}
   .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:var(--radius);cursor:pointer;font-size:13.5px;color:var(--text2);transition:all 0.15s;border:none;background:none;width:100%;text-align:left}
   .nav-item:hover{background:var(--bg3);color:var(--text)}
@@ -45,13 +44,11 @@
   .pnl-pill-label{font-size:10px;color:var(--text3);font-family:var(--font-mono);margin-bottom:4px}
   .pnl-pill-val{font-family:var(--font-mono);font-size:18px;font-weight:500;color:var(--green)}
 
-  /* MAIN */
   main{flex:1;overflow-y:auto;padding:28px 32px}
   .page{display:none}.page.active{display:block}
   .page-title{font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-0.03em;margin-bottom:4px}
   .page-sub{font-size:13px;color:var(--text3);margin-bottom:24px}
 
-  /* STATS GRID */
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
   .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 18px}
   .stat-label{font-size:11px;color:var(--text3);font-family:var(--font-mono);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px}
@@ -59,13 +56,11 @@
   .stat-delta{font-size:11px;margin-top:6px;display:flex;align-items:center;gap:4px}
   .up{color:var(--green)}.down{color:var(--red)}.neutral{color:var(--text3)}
 
-  /* CHART AREA */
   .chart-row{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:24px}
   .chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px}
   .chart-card h3{font-family:var(--font-display);font-size:14px;font-weight:600;margin-bottom:16px;color:var(--text2);letter-spacing:-0.01em}
   .chart-wrap{position:relative;width:100%;height:180px}
 
-  /* INSIGHTS */
   .insight-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-bottom:12px}
   .insight-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
   .insight-tag{font-size:10px;font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px}
@@ -77,7 +72,6 @@
   .insight-body{font-size:13px;color:var(--text2);line-height:1.6}
   .insight-metric{font-family:var(--font-mono);color:var(--accent);font-weight:500}
 
-  /* TRADE LOG TABLE */
   .table-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
   .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text);transition:all 0.15s;font-family:var(--font-body)}
   .btn:hover{background:var(--bg4);border-color:var(--border2)}
@@ -105,7 +99,7 @@
   /* MODAL */
   .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.2s;backdrop-filter:blur(2px)}
   .modal-overlay.open{opacity:1;pointer-events:all}
-  .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-xl);width:720px;max-width:96vw;max-height:90vh;overflow-y:auto;padding:28px}
+  .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-xl);width:760px;max-width:96vw;max-height:92vh;overflow-y:auto;padding:28px}
   .modal h2{font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.02em;margin-bottom:20px}
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .form-group{display:flex;flex-direction:column;gap:6px}
@@ -117,18 +111,23 @@
   textarea{resize:vertical;min-height:80px;line-height:1.5}
   .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;border-top:1px solid var(--border);padding-top:18px}
   
-  /* IMAGE UPLOAD */
+  /* AUTO-CALC BANNER */
+  .auto-calc-banner{background:rgba(240,192,64,0.08);border:1px solid rgba(240,192,64,0.2);border-radius:var(--radius);padding:8px 12px;font-size:12px;color:var(--amber);font-family:var(--font-mono);margin-bottom:14px;display:none}
+  .auto-calc-banner.show{display:flex;align-items:center;gap:8px}
+  
+  /* INPUT WITH HINT */
+  .input-hint{font-size:10px;color:var(--text3);margin-top:2px;font-family:var(--font-mono)}
+  .input-auto{border-color:rgba(240,192,64,0.4) !important;background:rgba(240,192,64,0.04) !important}
+
   .img-upload-zone{border:1.5px dashed var(--border2);border-radius:var(--radius-lg);padding:24px;text-align:center;cursor:pointer;transition:all 0.15s;position:relative;overflow:hidden}
   .img-upload-zone:hover{border-color:var(--accent);background:rgba(240,192,64,0.03)}
-  .img-upload-zone.has-img{border-style:solid;border-color:var(--border2)}
   .img-upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
   .img-upload-icon{width:36px;height:36px;margin:0 auto 8px;color:var(--text3)}
   .img-upload-label{font-size:13px;color:var(--text2)}
   .img-upload-sub{font-size:11px;color:var(--text3);margin-top:3px}
   #preview-img{width:100%;max-height:220px;object-fit:cover;border-radius:var(--radius);display:none}
 
-  /* TRADE DETAIL PANEL */
-  .detail-panel{position:fixed;right:0;top:0;height:100vh;width:420px;background:var(--bg2);border-left:1px solid var(--border);z-index:50;transform:translateX(100%);transition:transform 0.25s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:24px}
+  .detail-panel{position:fixed;right:0;top:0;height:100vh;width:440px;background:var(--bg2);border-left:1px solid var(--border);z-index:50;transform:translateX(100%);transition:transform 0.25s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:24px}
   .detail-panel.open{transform:translateX(0)}
   .detail-close{position:absolute;top:20px;right:20px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2)}
   .detail-trade-img{width:100%;border-radius:var(--radius-lg);margin:16px 0;object-fit:cover;max-height:200px;border:1px solid var(--border)}
@@ -138,17 +137,14 @@
   .tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
   .tag{font-size:11px;font-family:var(--font-mono);padding:3px 8px;border-radius:4px;background:var(--bg4);color:var(--text3);border:1px solid var(--border)}
 
-  /* JOURNAL PAGE */
   .journal-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin-bottom:12px}
   .journal-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
   .journal-date{font-family:var(--font-mono);font-size:12px;color:var(--text3)}
-  .journal-mood{display:flex;gap:4px}
   .mood-btn{width:28px;height:28px;border-radius:50%;border:none;cursor:pointer;font-size:14px;background:var(--bg3);transition:transform 0.15s}
   .mood-btn:hover{transform:scale(1.2)}
   .journal-text{font-size:13px;color:var(--text2);line-height:1.7;background:var(--bg3);border-radius:var(--radius);padding:12px;min-height:70px;outline:none;border:1px solid var(--border);width:100%;font-family:var(--font-body);resize:none}
   .journal-text:focus{border-color:var(--accent)}
   
-  /* HEATMAP */
   .heatmap-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px}
   .heatmap-cell{height:32px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-family:var(--font-mono);cursor:default;transition:transform 0.1s}
   .heatmap-cell:hover{transform:scale(1.1)}
@@ -157,26 +153,21 @@
   .hm-loss{background:rgba(239,68,68,0.2);color:var(--red)}
   .hm-be{background:var(--bg4);color:var(--text3)}
   
-  /* EQUITY CURVE */
   .equity-strip{font-family:var(--font-mono);font-size:11px;color:var(--text3);display:flex;gap:16px;margin-bottom:8px}
   
-  /* SCROLLBAR */
   ::-webkit-scrollbar{width:5px;height:5px}
   ::-webkit-scrollbar-track{background:transparent}
   ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
 
-  /* EMPTY STATE */
   .empty{text-align:center;padding:48px 24px;color:var(--text3)}
   .empty p{font-size:13px;margin-top:8px}
-  
-  /* SEPARATOR */
   .sep{height:1px;background:var(--border);margin:20px 0}
-  
   .section-title{font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text2);margin-bottom:12px;letter-spacing:-0.01em}
-  
-  /* RISK METER */
   .risk-bar{height:8px;border-radius:4px;background:var(--bg3);overflow:hidden;margin-top:6px}
   .risk-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--amber),var(--red));transition:width 0.5s}
+  
+  /* DETAIL ACTION ROW */
+  .detail-actions{display:flex;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
   
   @media(max-width:900px){
     .sidebar{width:56px;min-width:56px}
@@ -192,7 +183,6 @@
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
   <div class="logo">
     <div class="logo-mark">TL</div>
@@ -203,65 +193,60 @@
   </div>
   <nav>
     <div class="nav-label">Main</div>
-    <button class="nav-item active" onclick="showPage('dashboard')">
+    <button class="nav-item active" onclick="showPage('dashboard',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       <span>Dashboard</span>
     </button>
-    <button class="nav-item" onclick="showPage('trades')">
+    <button class="nav-item" onclick="showPage('trades',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
       <span>Trade Log</span>
     </button>
-    <button class="nav-item" onclick="showPage('analytics')">
+    <button class="nav-item" onclick="showPage('analytics',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       <span>Analytics</span>
     </button>
-    <button class="nav-item" onclick="showPage('insights')">
+    <button class="nav-item" onclick="showPage('insights',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
       <span>Insights</span>
     </button>
     <div class="nav-label">Records</div>
-    <button class="nav-item" onclick="showPage('journal')">
+    <button class="nav-item" onclick="showPage('journal',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       <span>Daily Journal</span>
     </button>
-    <button class="nav-item" onclick="showPage('playbook')">
+    <button class="nav-item" onclick="showPage('playbook',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
       <span>Playbook</span>
     </button>
+    <div class="nav-label">Data</div>
+    <button class="nav-item" onclick="exportJSON()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span>Export JSON</span>
+    </button>
+    <button class="nav-item" onclick="exportCSV()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span>Export CSV</span>
+    </button>
+    <button class="nav-item" onclick="triggerImport()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <span>Import JSON</span>
+    </button>
+    <input type="file" id="import-file" accept=".json" style="display:none" onchange="importJSON(this)">
   </nav>
   <div class="sidebar-footer">
     <div class="pnl-pill">
       <div class="pnl-pill-label">Total P&L</div>
       <div class="pnl-pill-val" id="sidebar-pnl">+$0.00</div>
     </div>
-    <div style="margin-top:10px;display:flex;flex-direction:column;gap:5px">
-      <div class="nav-label" style="padding:4px 0 2px">Data Backup</div>
-      <button class="nav-item" onclick="exportJSON()" title="Export all data as JSON">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        <span>Export JSON</span>
-      </button>
-      <button class="nav-item" onclick="exportCSV()" title="Export trades as CSV">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
-        <span>Export CSV</span>
-      </button>
-      <button class="nav-item" onclick="triggerImport()" title="Import from JSON backup">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <span>Import JSON</span>
-      </button>
-      <input type="file" id="import-file" accept=".json" style="display:none" onchange="importJSON(this)">
-    </div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <main>
-
-  <!-- DASHBOARD PAGE -->
+  <!-- DASHBOARD -->
   <div class="page active" id="page-dashboard">
     <div class="page-title">Dashboard</div>
     <div class="page-sub">Overview of your trading performance</div>
-
-    <div class="stats-grid" id="stats-grid">
+    <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-label">Total P&L</div>
         <div class="stat-val up" id="stat-pnl">+$0.00</div>
@@ -283,40 +268,30 @@
         <div class="stat-delta neutral" id="stat-pf-sub">Gross profit / loss</div>
       </div>
     </div>
-
     <div class="chart-row">
       <div class="chart-card">
         <h3>Equity Curve</h3>
         <div class="equity-strip" id="equity-strip">Starting balance: $0</div>
-        <div class="chart-wrap">
-          <canvas id="equityChart" role="img" aria-label="Equity curve chart">Equity curve of trading performance.</canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="equityChart"></canvas></div>
       </div>
       <div class="chart-card">
         <h3>Win / Loss Distribution</h3>
-        <div class="chart-wrap" style="height:160px">
-          <canvas id="wlChart" role="img" aria-label="Win loss distribution pie chart">Win/Loss distribution.</canvas>
-        </div>
+        <div class="chart-wrap" style="height:160px"><canvas id="wlChart"></canvas></div>
       </div>
     </div>
-
     <div class="chart-row">
       <div class="chart-card">
         <h3>P&L by Pair</h3>
-        <div class="chart-wrap">
-          <canvas id="pairChart" role="img" aria-label="P&L per trading pair bar chart">P&L per pair.</canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="pairChart"></canvas></div>
       </div>
       <div class="chart-card">
         <h3>Setup Performance</h3>
-        <div class="chart-wrap">
-          <canvas id="setupChart" role="img" aria-label="Win rate by setup type">Win rate by setup.</canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="setupChart"></canvas></div>
       </div>
     </div>
   </div>
 
-  <!-- TRADE LOG PAGE -->
+  <!-- TRADE LOG -->
   <div class="page" id="page-trades">
     <div class="table-header">
       <div>
@@ -339,15 +314,8 @@
       <table id="trade-table">
         <thead>
           <tr>
-            <th>Pair</th>
-            <th>Date</th>
-            <th>Setup</th>
-            <th>Side</th>
-            <th>Entry</th>
-            <th>Exit</th>
-            <th>R:R</th>
-            <th>P&L</th>
-            <th>Outcome</th>
+            <th>Pair</th><th>Date</th><th>Setup</th><th>Side</th>
+            <th>Entry</th><th>Exit</th><th>R:R</th><th>P&L</th><th>Outcome</th>
           </tr>
         </thead>
         <tbody id="trade-tbody"></tbody>
@@ -359,34 +327,25 @@
     </div>
   </div>
 
-  <!-- ANALYTICS PAGE -->
+  <!-- ANALYTICS -->
   <div class="page" id="page-analytics">
     <div class="page-title">Analytics</div>
     <div class="page-sub">Deep performance analysis</div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
       <div class="chart-card">
         <h3>P&L by Day of Week</h3>
-        <div class="chart-wrap">
-          <canvas id="dowChart" role="img" aria-label="P&L by day of week">P&L by day.</canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="dowChart"></canvas></div>
       </div>
       <div class="chart-card">
         <h3>P&L Distribution</h3>
-        <div class="chart-wrap">
-          <canvas id="distChart" role="img" aria-label="P&L distribution histogram">P&L distribution.</canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="distChart"></canvas></div>
       </div>
     </div>
-
     <div class="chart-card" style="margin-bottom:20px">
       <h3>Performance Heatmap — Monthly</h3>
-      <div id="heatmap-container">
-        <div class="empty"><p style="font-size:12px">Log trades to see your monthly performance heatmap</p></div>
-      </div>
+      <div id="heatmap-container"><div class="empty"><p style="font-size:12px">Log trades to see your monthly performance heatmap</p></div></div>
     </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
       <div class="stat-card">
         <div class="stat-label">Best Trade</div>
         <div class="stat-val up" id="a-best">$0</div>
@@ -399,7 +358,7 @@
       </div>
       <div class="stat-card">
         <div class="stat-label">Avg Hold Time</div>
-        <div class="stat-val" id="a-hold">0h</div>
+        <div class="stat-val" id="a-hold">—</div>
         <div class="stat-delta neutral">Per trade</div>
       </div>
       <div class="stat-card">
@@ -418,28 +377,25 @@
         <div class="stat-delta neutral">Per trade avg</div>
       </div>
     </div>
-
     <div class="chart-card">
       <h3>Drawdown</h3>
-      <div class="chart-wrap">
-        <canvas id="ddChart" role="img" aria-label="Drawdown over time">Drawdown chart.</canvas>
-      </div>
+      <div class="chart-wrap"><canvas id="ddChart"></canvas></div>
     </div>
   </div>
 
-  <!-- INSIGHTS PAGE -->
+  <!-- INSIGHTS -->
   <div class="page" id="page-insights">
     <div class="page-title">Insights</div>
     <div class="page-sub">Strategy analysis & refinement suggestions</div>
     <div id="insights-container">
       <div class="empty">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto;opacity:0.3"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
-        <p>Log at least 5 trades to generate insights</p>
+        <p>Log at least 3 trades to generate insights</p>
       </div>
     </div>
   </div>
 
-  <!-- DAILY JOURNAL PAGE -->
+  <!-- JOURNAL -->
   <div class="page" id="page-journal">
     <div class="table-header">
       <div>
@@ -454,41 +410,23 @@
     <div id="journal-container"></div>
   </div>
 
-  <!-- PLAYBOOK PAGE -->
+  <!-- PLAYBOOK -->
   <div class="page" id="page-playbook">
     <div class="page-title">Strategy Playbook</div>
     <div class="page-sub">Your documented setups & rules</div>
-    
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div class="insight-card">
-        <div class="insight-header">
-          <span class="insight-tag tag-pattern">Setup A</span>
-          <span class="insight-title">Harmonic Gartley</span>
-        </div>
+        <div class="insight-header"><span class="insight-tag tag-pattern">Setup A</span><span class="insight-title">Harmonic Gartley</span></div>
         <div class="insight-body">PRZ zone confluence with Supply/Demand. Entry after CHoCH on LTF. XAB: 0.618 | XAD: 0.786 retracement. SL below PRZ, TP at XA leg retracement levels (0.382 / 0.618).</div>
-        <div class="tag-row" style="margin-top:10px">
-          <span class="tag">HTF bias required</span>
-          <span class="tag">S&D confluence</span>
-          <span class="tag">CHoCH entry</span>
-        </div>
+        <div class="tag-row" style="margin-top:10px"><span class="tag">HTF bias required</span><span class="tag">S&D confluence</span><span class="tag">CHoCH entry</span></div>
       </div>
       <div class="insight-card">
-        <div class="insight-header">
-          <span class="insight-tag tag-pattern">Setup B</span>
-          <span class="insight-title">Bat Pattern</span>
-        </div>
+        <div class="insight-header"><span class="insight-tag tag-pattern">Setup B</span><span class="insight-title">Bat Pattern</span></div>
         <div class="insight-body">XAD: 0.886 retracement (critical). More precise PRZ than Gartley. XD as confirmation of SMC sweep. Entry: sweep + CHoCH + FVG. Tighter SL, higher R:R potential.</div>
-        <div class="tag-row" style="margin-top:10px">
-          <span class="tag">0.886 XD level</span>
-          <span class="tag">SMC sweep</span>
-          <span class="tag">FVG entry</span>
-        </div>
+        <div class="tag-row" style="margin-top:10px"><span class="tag">0.886 XD level</span><span class="tag">SMC sweep</span><span class="tag">FVG entry</span></div>
       </div>
       <div class="insight-card" style="grid-column:1/-1">
-        <div class="insight-header">
-          <span class="insight-tag tag-tip">Rules</span>
-          <span class="insight-title">Trading Rules & Risk Management</span>
-        </div>
+        <div class="insight-header"><span class="insight-tag tag-tip">Rules</span><span class="insight-title">Trading Rules & Risk Management</span></div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:4px">
           <div><div class="detail-label">Max Risk Per Trade</div><div class="detail-val insight-metric">1-2%</div></div>
           <div><div class="detail-label">Min R:R</div><div class="detail-val insight-metric">1:2</div></div>
@@ -500,17 +438,23 @@
       </div>
     </div>
   </div>
-
 </main>
 
-<!-- ADD TRADE MODAL -->
+<!-- ADD/EDIT TRADE MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
-    <h2>Log New Trade</h2>
+    <h2 id="modal-title">Log New Trade</h2>
+    <input type="hidden" id="f-edit-id">
+    
+    <div class="auto-calc-banner" id="auto-calc-banner">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span id="auto-calc-text">Auto-calculated from your price inputs</span>
+    </div>
+
     <div class="form-grid">
       <div class="form-group">
         <label>Pair / Ticker</label>
-        <input type="text" id="f-pair" placeholder="e.g. BTC/USDT, ETHUSDT" autocomplete="off">
+        <input type="text" id="f-pair" placeholder="e.g. BTC/USDT, EURUSD" autocomplete="off">
       </div>
       <div class="form-group">
         <label>Date & Time</label>
@@ -521,51 +465,62 @@
         <select id="f-setup">
           <option value="">Select setup</option>
           <option>Supply & Demand</option>
+          <option>Harmonic Gartley</option>
+          <option>Bat Pattern</option>
+          <option>Breaker Block</option>
+          <option>FVG / Imbalance</option>
+          <option>Order Block</option>
+          <option>Liquidity Grab</option>
+          <option>CHoCH Entry</option>
           <option>Other</option>
         </select>
       </div>
       <div class="form-group">
         <label>Direction</label>
-        <select id="f-side">
+        <select id="f-side" onchange="autoCalc()">
           <option value="long">Long</option>
           <option value="short">Short</option>
         </select>
       </div>
       <div class="form-group">
         <label>Entry Price</label>
-        <input type="number" id="f-entry" placeholder="0.00" step="any">
+        <input type="number" id="f-entry" placeholder="0.00" step="any" oninput="autoCalc()">
       </div>
       <div class="form-group">
         <label>Exit Price</label>
-        <input type="number" id="f-exit" placeholder="0.00" step="any">
+        <input type="number" id="f-exit" placeholder="0.00" step="any" oninput="autoCalc()">
       </div>
       <div class="form-group">
         <label>Stop Loss</label>
-        <input type="number" id="f-sl" placeholder="0.00" step="any">
+        <input type="number" id="f-sl" placeholder="0.00" step="any" oninput="autoCalc()">
       </div>
       <div class="form-group">
         <label>Take Profit</label>
-        <input type="number" id="f-tp" placeholder="0.00" step="any">
+        <input type="number" id="f-tp" placeholder="0.00" step="any" oninput="autoCalc()">
       </div>
       <div class="form-group">
         <label>Position Size ($)</label>
-        <input type="number" id="f-size" placeholder="e.g. 500" step="any">
+        <input type="number" id="f-size" placeholder="e.g. 500" step="any" oninput="autoCalc()">
+        <div class="input-hint">Used to calculate $ P&L from price move</div>
       </div>
       <div class="form-group">
-        <label>P&L ($)</label>
-        <input type="number" id="f-pnl" placeholder="e.g. 120 or -45" step="any">
+        <label>P&L ($) <span style="color:var(--amber);font-size:10px">AUTO</span></label>
+        <input type="number" id="f-pnl" placeholder="Auto-calculated or enter manually" step="any" oninput="onManualPnl()">
+        <div class="input-hint" id="pnl-hint">Enter manually or fill entry/exit/size to auto-calculate</div>
       </div>
       <div class="form-group">
-        <label>R:R Achieved</label>
-        <input type="text" id="f-rr" placeholder="e.g. 1:2.5">
+        <label>R:R Achieved <span style="color:var(--amber);font-size:10px">AUTO</span></label>
+        <input type="text" id="f-rr" placeholder="Auto-calculated or enter e.g. 1:2.5" oninput="onManualRR()">
+        <div class="input-hint" id="rr-hint">Enter manually or fill entry/SL/TP to auto-calculate</div>
       </div>
       <div class="form-group">
-        <label>Outcome</label>
+        <label>Outcome <span style="color:var(--amber);font-size:10px">AUTO</span></label>
         <select id="f-outcome">
           <option value="win">Win</option>
           <option value="loss">Loss</option>
           <option value="be">Break Even</option>
         </select>
+        <div class="input-hint">Auto-set from P&L; override if needed</div>
       </div>
       <div class="form-group">
         <label>Timeframe</label>
@@ -577,10 +532,8 @@
       <div class="form-group">
         <label>Session</label>
         <select id="f-session">
-          <option>Asian</option>
-          <option>London</option>
-          <option>New York</option>
-          <option>London/NY Overlap</option>
+          <option>Asian</option><option>London</option>
+          <option>New York</option><option>London/NY Overlap</option>
         </select>
       </div>
       <div class="form-group full">
@@ -591,12 +544,9 @@
         <label>Emotions & Mindset</label>
         <select id="f-emotion">
           <option value="">Select state</option>
-          <option>Calm & Disciplined</option>
-          <option>FOMO</option>
-          <option>Confident</option>
-          <option>Hesitant</option>
-          <option>Revenge Trading</option>
-          <option>Neutral</option>
+          <option>Calm & Disciplined</option><option>FOMO</option>
+          <option>Confident</option><option>Hesitant</option>
+          <option>Revenge Trading</option><option>Neutral</option>
         </select>
       </div>
       <div class="form-group full">
@@ -612,7 +562,7 @@
     </div>
     <div class="modal-actions">
       <button class="btn" onclick="closeModal()">Cancel</button>
-      <button class="btn btn-accent" onclick="saveTrade()">Save Trade</button>
+      <button class="btn btn-accent" id="modal-save-btn" onclick="saveTrade()">Save Trade</button>
     </div>
   </div>
 </div>
@@ -632,13 +582,124 @@ let journalEntries = JSON.parse(localStorage.getItem('tradelog_journal') || '[]'
 let activeFilter = 'all';
 let equityChart, wlChart, pairChart, setupChart, dowChart, distChart, ddChart;
 let imgData = null;
+let manualPnl = false;
+let manualRR = false;
+let editingId = null;
+
+// ============ AUTO-CALCULATE ============
+function autoCalc() {
+  const entry = parseFloat(document.getElementById('f-entry').value);
+  const exit = parseFloat(document.getElementById('f-exit').value);
+  const sl = parseFloat(document.getElementById('f-sl').value);
+  const tp = parseFloat(document.getElementById('f-tp').value);
+  const size = parseFloat(document.getElementById('f-size').value);
+  const side = document.getElementById('f-side').value;
+  
+  let calcDone = false;
+  const banner = document.getElementById('auto-calc-banner');
+  const bannerText = document.getElementById('auto-calc-text');
+  const msgs = [];
+
+  // --- Auto-calc R:R from entry, SL, TP ---
+  if (!manualRR && entry > 0 && sl > 0 && tp > 0) {
+    let risk, reward;
+    if (side === 'long') {
+      risk = entry - sl;
+      reward = tp - entry;
+    } else {
+      risk = sl - entry;
+      reward = entry - tp;
+    }
+    if (risk > 0 && reward > 0) {
+      const rr = (reward / risk).toFixed(2);
+      const rrEl = document.getElementById('f-rr');
+      rrEl.value = '1:' + rr;
+      rrEl.classList.add('input-auto');
+      document.getElementById('rr-hint').textContent = '✓ Calculated from entry / SL / TP';
+      msgs.push('R:R = 1:' + rr);
+      calcDone = true;
+    }
+  }
+
+  // --- Auto-calc P&L from entry, exit, size ---
+  if (!manualPnl && entry > 0 && exit > 0 && size > 0) {
+    let priceDiff;
+    if (side === 'long') {
+      priceDiff = (exit - entry) / entry;
+    } else {
+      priceDiff = (entry - exit) / entry;
+    }
+    const pnl = parseFloat((priceDiff * size).toFixed(2));
+    const pnlEl = document.getElementById('f-pnl');
+    pnlEl.value = pnl;
+    pnlEl.classList.add('input-auto');
+    document.getElementById('pnl-hint').textContent = '✓ Calculated from price move × position size';
+    msgs.push('P&L = $' + (pnl >= 0 ? '+' : '') + pnl);
+    calcDone = true;
+
+    // Auto-set outcome
+    const outcomeEl = document.getElementById('f-outcome');
+    if (Math.abs(pnl) < 0.01) {
+      outcomeEl.value = 'be';
+    } else if (pnl > 0) {
+      outcomeEl.value = 'win';
+    } else {
+      outcomeEl.value = 'loss';
+    }
+  } else if (!manualPnl) {
+    // Try auto-outcome from exit vs entry (no size)
+    if (entry > 0 && exit > 0) {
+      const outcomeEl = document.getElementById('f-outcome');
+      const isProfit = side === 'long' ? exit > entry : exit < entry;
+      const isLoss = side === 'long' ? exit < entry : exit > entry;
+      if (Math.abs(exit - entry) / entry < 0.0001) outcomeEl.value = 'be';
+      else if (isProfit) outcomeEl.value = 'win';
+      else if (isLoss) outcomeEl.value = 'loss';
+    }
+  }
+
+  if (calcDone) {
+    banner.classList.add('show');
+    bannerText.textContent = '⚡ Auto-calculated: ' + msgs.join(' · ');
+  }
+}
+
+function onManualPnl() {
+  manualPnl = true;
+  document.getElementById('f-pnl').classList.remove('input-auto');
+  document.getElementById('pnl-hint').textContent = 'Manually entered';
+  // Auto-set outcome from manual P&L
+  const pnl = parseFloat(document.getElementById('f-pnl').value);
+  if (!isNaN(pnl)) {
+    const outcomeEl = document.getElementById('f-outcome');
+    if (Math.abs(pnl) < 0.01) outcomeEl.value = 'be';
+    else if (pnl > 0) outcomeEl.value = 'win';
+    else outcomeEl.value = 'loss';
+  }
+}
+
+function onManualRR() {
+  manualRR = true;
+  document.getElementById('f-rr').classList.remove('input-auto');
+  document.getElementById('rr-hint').textContent = 'Manually entered';
+}
+
+function resetAutoCalc() {
+  manualPnl = false;
+  manualRR = false;
+  document.getElementById('f-pnl').classList.remove('input-auto');
+  document.getElementById('f-rr').classList.remove('input-auto');
+  document.getElementById('pnl-hint').textContent = 'Enter manually or fill entry/exit/size to auto-calculate';
+  document.getElementById('rr-hint').textContent = 'Enter manually or fill entry/SL/TP to auto-calculate';
+  document.getElementById('auto-calc-banner').classList.remove('show');
+}
 
 // ============ NAVIGATION ============
-function showPage(id) {
+function showPage(id, el) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
-  event.currentTarget.classList.add('active');
+  if (el) el.classList.add('active');
   if (id === 'dashboard') renderDashboard();
   if (id === 'trades') renderTradeTable();
   if (id === 'analytics') renderAnalytics();
@@ -647,17 +708,68 @@ function showPage(id) {
 }
 
 // ============ MODAL ============
-function openModal() {
-  const now = new Date();
-  const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
-  document.getElementById('f-date').value = local;
+function openModal(tradeId) {
+  editingId = tradeId || null;
+  resetAutoCalc();
+  imgData = null;
+  
+  document.getElementById('preview-img').style.display = 'none';
+  document.querySelector('.img-upload-icon').style.display = 'block';
+  document.querySelector('.img-upload-label').style.display = 'block';
+  document.querySelector('.img-upload-sub').style.display = 'block';
+
+  if (tradeId) {
+    // EDIT MODE — populate form
+    const t = trades.find(x => x.id === tradeId);
+    if (!t) return;
+    document.getElementById('modal-title').textContent = 'Edit Trade';
+    document.getElementById('modal-save-btn').textContent = 'Update Trade';
+    document.getElementById('f-edit-id').value = tradeId;
+    document.getElementById('f-pair').value = t.pair || '';
+    document.getElementById('f-date').value = t.date || '';
+    document.getElementById('f-setup').value = t.setup || '';
+    document.getElementById('f-side').value = t.side || 'long';
+    document.getElementById('f-entry').value = t.entry || '';
+    document.getElementById('f-exit').value = t.exit || '';
+    document.getElementById('f-sl').value = t.sl || '';
+    document.getElementById('f-tp').value = t.tp || '';
+    document.getElementById('f-size').value = t.size || '';
+    document.getElementById('f-pnl').value = t.pnl || '';
+    document.getElementById('f-rr').value = t.rr || '';
+    document.getElementById('f-outcome').value = t.outcome || 'win';
+    document.getElementById('f-tf').value = t.tf || '1H';
+    document.getElementById('f-session').value = t.session || 'London';
+    document.getElementById('f-notes').value = t.notes || '';
+    document.getElementById('f-emotion').value = t.emotion || '';
+    if (t.img) {
+      imgData = t.img;
+      document.getElementById('preview-img').src = t.img;
+      document.getElementById('preview-img').style.display = 'block';
+      document.querySelector('.img-upload-icon').style.display = 'none';
+      document.querySelector('.img-upload-label').style.display = 'none';
+      document.querySelector('.img-upload-sub').style.display = 'none';
+    }
+  } else {
+    // NEW MODE
+    document.getElementById('modal-title').textContent = 'Log New Trade';
+    document.getElementById('modal-save-btn').textContent = 'Save Trade';
+    document.getElementById('f-edit-id').value = '';
+    const now = new Date();
+    const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+    document.getElementById('f-date').value = local;
+    ['f-pair','f-entry','f-exit','f-sl','f-tp','f-size','f-pnl','f-rr','f-notes'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('f-setup').value = '';
+    document.getElementById('f-emotion').value = '';
+    document.getElementById('f-outcome').value = 'win';
+    document.getElementById('f-side').value = 'long';
+  }
   document.getElementById('modal-overlay').classList.add('open');
 }
+
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('open');
   document.getElementById('f-img').value = '';
-  document.getElementById('preview-img').style.display = 'none';
-  imgData = null;
+  editingId = null;
 }
 document.getElementById('modal-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
@@ -682,8 +794,9 @@ function handleImgUpload(input) {
 function saveTrade() {
   const pair = document.getElementById('f-pair').value.trim();
   if (!pair) { alert('Please enter a pair/ticker'); return; }
+  
   const trade = {
-    id: Date.now(),
+    id: editingId || Date.now(),
     pair: pair.toUpperCase(),
     date: document.getElementById('f-date').value,
     setup: document.getElementById('f-setup').value,
@@ -702,14 +815,21 @@ function saveTrade() {
     emotion: document.getElementById('f-emotion').value,
     img: imgData
   };
-  trades.unshift(trade);
+
+  if (editingId) {
+    // Update existing
+    const idx = trades.findIndex(t => t.id === editingId);
+    if (idx !== -1) trades[idx] = trade;
+    showToast('Trade updated');
+  } else {
+    trades.unshift(trade);
+    showToast('Trade saved');
+  }
+  
   localStorage.setItem('tradelog_trades', JSON.stringify(trades));
   closeModal();
+  closeDetail();
   renderAll();
-  // reset form
-  ['f-pair','f-entry','f-exit','f-sl','f-tp','f-size','f-pnl','f-rr','f-notes'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('f-setup').value = '';
-  document.getElementById('f-emotion').value = '';
 }
 
 // ============ DASHBOARD ============
@@ -732,31 +852,26 @@ function renderDashboard() {
   const pf = grossLoss > 0 ? (grossWin / grossLoss) : grossWin > 0 ? 999 : 0;
   
   let rrVals = trades.filter(t => t.rr).map(t => {
-    const parts = t.rr.replace('1:', '').replace('1 :', '').trim();
-    return parseFloat(parts) || 0;
+    const m = t.rr.match(/[\d.]+\s*:\s*([\d.]+)/);
+    return m ? parseFloat(m[1]) : 0;
   }).filter(v => v > 0);
   const avgRR = rrVals.length ? rrVals.reduce((a, b) => a + b, 0) / rrVals.length : 0;
 
   updateStats(totalPnl, winRate, avgRR, pf, wins.length, losses.length, bes.length);
-  document.getElementById('sidebar-pnl').textContent = (totalPnl >= 0 ? '+$' : '-$') + Math.abs(totalPnl).toFixed(2);
-  document.getElementById('sidebar-pnl').className = 'pnl-pill-val ' + (totalPnl >= 0 ? 'up' : 'down');
+  const sidebarPnl = document.getElementById('sidebar-pnl');
+  sidebarPnl.textContent = (totalPnl >= 0 ? '+$' : '-$') + Math.abs(totalPnl).toFixed(2);
+  sidebarPnl.className = 'pnl-pill-val ' + (totalPnl >= 0 ? 'up' : 'down');
 
-  // Equity curve
   const sorted = [...trades].sort((a, b) => new Date(a.date) - new Date(b.date));
   let eq = [0];
-  sorted.forEach(t => eq.push((eq[eq.length - 1] + t.pnl)));
+  sorted.forEach(t => eq.push(eq[eq.length - 1] + t.pnl));
   renderEquityChart(eq, sorted.map(t => t.pair));
   renderWLChart(wins.length, losses.length, bes.length);
 
-  // Pair PnL
   const pairMap = {};
-  trades.forEach(t => {
-    if (!pairMap[t.pair]) pairMap[t.pair] = 0;
-    pairMap[t.pair] += t.pnl;
-  });
+  trades.forEach(t => { pairMap[t.pair] = (pairMap[t.pair] || 0) + t.pnl; });
   renderPairChart(pairMap);
 
-  // Setup win rate
   const setupMap = {};
   trades.forEach(t => {
     if (!t.setup) return;
@@ -816,7 +931,10 @@ function renderEquityChart(data, labels) {
       }
     }
   });
-  document.getElementById('equity-strip').innerHTML = `Peak: <span style="color:var(--green)">${'$' + Math.max(...data).toFixed(2)}</span> &nbsp;|&nbsp; Max DD: <span style="color:var(--red)">${'$' + (Math.min(...data)).toFixed(2)}</span>`;
+  const peak = Math.max(...data);
+  const trough = Math.min(...data);
+  document.getElementById('equity-strip').innerHTML =
+    `Peak: <span style="color:var(--green)">$${peak.toFixed(2)}</span> &nbsp;|&nbsp; Trough: <span style="color:var(--red)">$${trough.toFixed(2)}</span>`;
 }
 
 function renderWLChart(w, l, be) {
@@ -940,37 +1058,44 @@ function openDetail(t) {
       </div>
       ${t.img ? `<img src="${t.img}" class="detail-trade-img" alt="Trade screenshot">` : ''}
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px">
-        <div><div class="detail-label">P&L</div><div class="detail-val ${t.pnl >= 0 ? 'up' : 'down'}" style="font-family:var(--font-mono);font-size:18px;font-weight:500">${t.pnl >= 0 ? '+' : ''}$${Math.abs(t.pnl).toFixed(2)}</div></div>
-        <div><div class="detail-label">R:R</div><div class="detail-val" style="font-family:var(--font-mono)">${t.rr || '—'}</div></div>
-        <div><div class="detail-label">Entry</div><div class="detail-val" style="font-family:var(--font-mono)">${t.entry || '—'}</div></div>
-        <div><div class="detail-label">Exit</div><div class="detail-val" style="font-family:var(--font-mono)">${t.exit || '—'}</div></div>
-        <div><div class="detail-label">Stop Loss</div><div class="detail-val" style="font-family:var(--font-mono);color:var(--red)">${t.sl || '—'}</div></div>
-        <div><div class="detail-label">Take Profit</div><div class="detail-val" style="font-family:var(--font-mono);color:var(--green)">${t.tp || '—'}</div></div>
-        <div><div class="detail-label">Position Size</div><div class="detail-val" style="font-family:var(--font-mono)">$${t.size || '—'}</div></div>
-        <div><div class="detail-label">Timeframe</div><div class="detail-val">${t.tf || '—'}</div></div>
-        <div><div class="detail-label">Session</div><div class="detail-val">${t.session || '—'}</div></div>
-        <div><div class="detail-label">Emotion</div><div class="detail-val">${t.emotion || '—'}</div></div>
+        <div><div class="detail-label">P&L</div><div class="${t.pnl >= 0 ? 'up' : 'down'}" style="font-family:var(--font-mono);font-size:18px;font-weight:500">${t.pnl >= 0 ? '+' : ''}$${Math.abs(t.pnl).toFixed(2)}</div></div>
+        <div><div class="detail-label">R:R</div><div style="font-family:var(--font-mono);font-size:14px">${t.rr || '—'}</div></div>
+        <div><div class="detail-label">Entry</div><div style="font-family:var(--font-mono);font-size:14px">${t.entry || '—'}</div></div>
+        <div><div class="detail-label">Exit</div><div style="font-family:var(--font-mono);font-size:14px">${t.exit || '—'}</div></div>
+        <div><div class="detail-label">Stop Loss</div><div style="font-family:var(--font-mono);font-size:14px;color:var(--red)">${t.sl || '—'}</div></div>
+        <div><div class="detail-label">Take Profit</div><div style="font-family:var(--font-mono);font-size:14px;color:var(--green)">${t.tp || '—'}</div></div>
+        <div><div class="detail-label">Position Size</div><div style="font-family:var(--font-mono);font-size:14px">$${t.size || '—'}</div></div>
+        <div><div class="detail-label">Timeframe</div><div style="font-size:14px">${t.tf || '—'}</div></div>
+        <div><div class="detail-label">Session</div><div style="font-size:14px">${t.session || '—'}</div></div>
+        <div><div class="detail-label">Emotion</div><div style="font-size:14px">${t.emotion || '—'}</div></div>
       </div>
       <div class="detail-label" style="margin-top:14px">Date / Time</div>
-      <div class="detail-val" style="font-family:var(--font-mono);font-size:12px">${dateStr}</div>
-      ${t.notes ? `<div class="detail-label" style="margin-top:14px">Notes</div><div class="detail-notes">${t.notes}</div>` : ''}
-      <div style="margin-top:16px">
+      <div style="font-family:var(--font-mono);font-size:12px;color:var(--text)">${dateStr}</div>
+      ${t.notes ? `<div class="detail-label" style="margin-top:14px">Notes</div><div class="detail-notes">${t.notes.replace(/\n/g,'<br>')}</div>` : ''}
+      <div class="detail-actions">
+        <button class="btn btn-accent" style="flex:1" onclick="openModal(${t.id})">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Edit Trade
+        </button>
         <button class="btn" style="color:var(--red);border-color:var(--red-dim)" onclick="deleteTrade(${t.id})">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
-          Delete Trade
+          Delete
         </button>
       </div>
     </div>
   `;
   document.getElementById('detail-panel').classList.add('open');
 }
+
 function closeDetail() { document.getElementById('detail-panel').classList.remove('open'); }
+
 function deleteTrade(id) {
   if (!confirm('Delete this trade?')) return;
   trades = trades.filter(t => t.id !== id);
   localStorage.setItem('tradelog_trades', JSON.stringify(trades));
   closeDetail();
   renderAll();
+  showToast('Trade deleted');
 }
 
 // ============ ANALYTICS ============
@@ -979,25 +1104,33 @@ function renderAnalytics() {
   const wins = trades.filter(t => t.outcome === 'win');
   const losses = trades.filter(t => t.outcome === 'loss');
 
-  // Stats
+  // FIX: Best and worst trade — find trade with MAX and MIN pnl correctly
   const allPnl = trades.map(t => t.pnl);
-  const best = Math.max(...allPnl);
-  const worst = Math.min(...allPnl);
-  document.getElementById('a-best').textContent = '+$' + best.toFixed(2);
-  document.getElementById('a-best-pair').textContent = trades.find(t => t.pnl === best)?.pair || '—';
-  document.getElementById('a-worst').textContent = '-$' + Math.abs(worst).toFixed(2);
-  document.getElementById('a-worst-pair').textContent = trades.find(t => t.pnl === worst)?.pair || '—';
+  const bestPnl = Math.max(...allPnl);
+  const worstPnl = Math.min(...allPnl);
+  const bestTrade = trades.find(t => t.pnl === bestPnl);
+  const worstTrade = trades.find(t => t.pnl === worstPnl);
+
+  document.getElementById('a-best').textContent = (bestPnl >= 0 ? '+$' : '-$') + Math.abs(bestPnl).toFixed(2);
+  document.getElementById('a-best').className = 'stat-val ' + (bestPnl >= 0 ? 'up' : 'neutral');
+  document.getElementById('a-best-pair').textContent = bestTrade ? bestTrade.pair + (bestTrade.date ? ' · ' + new Date(bestTrade.date).toLocaleDateString() : '') : '—';
+
+  document.getElementById('a-worst').textContent = (worstPnl >= 0 ? '+$' : '-$') + Math.abs(worstPnl).toFixed(2);
+  document.getElementById('a-worst').className = 'stat-val ' + (worstPnl < 0 ? 'down' : 'neutral');
+  document.getElementById('a-worst-pair').textContent = worstTrade ? worstTrade.pair + (worstTrade.date ? ' · ' + new Date(worstTrade.date).toLocaleDateString() : '') : '—';
+
   const avgWin = wins.length ? wins.reduce((s, t) => s + t.pnl, 0) / wins.length : 0;
   const avgLoss = losses.length ? losses.reduce((s, t) => s + t.pnl, 0) / losses.length : 0;
   document.getElementById('a-avgwin').textContent = '+$' + avgWin.toFixed(2);
-  document.getElementById('a-avgloss').textContent = '-$' + Math.abs(avgLoss).toFixed(2);
+  document.getElementById('a-avgloss').textContent = (avgLoss < 0 ? '-$' : '$') + Math.abs(avgLoss).toFixed(2);
   const wr = trades.length ? wins.length / trades.length : 0;
   const exp = (wr * avgWin) + ((1 - wr) * avgLoss);
-  document.getElementById('a-exp').textContent = (exp >= 0 ? '+' : '') + '$' + exp.toFixed(2);
-  document.getElementById('a-exp').className = 'stat-val ' + (exp >= 0 ? 'up' : 'down');
+  const expEl = document.getElementById('a-exp');
+  expEl.textContent = (exp >= 0 ? '+$' : '-$') + Math.abs(exp).toFixed(2);
+  expEl.className = 'stat-val ' + (exp >= 0 ? 'up' : 'down');
   document.getElementById('a-hold').textContent = '—';
 
-  // Day of week chart
+  // Day of week
   destroyChart(dowChart);
   const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const dowMap = {0:0,1:0,2:0,3:0,4:0,5:0,6:0};
@@ -1017,7 +1150,7 @@ function renderAnalytics() {
     }
   });
 
-  // Distribution histogram
+  // Distribution
   destroyChart(distChart);
   const ctx2 = document.getElementById('distChart').getContext('2d');
   const buckets = {};
@@ -1025,12 +1158,12 @@ function renderAnalytics() {
     const b = Math.round(t.pnl / 50) * 50;
     buckets[b] = (buckets[b] || 0) + 1;
   });
-  const bKeys = Object.keys(buckets).sort((a, b) => a - b);
+  const bKeys = Object.keys(buckets).sort((a, b) => Number(a) - Number(b));
   distChart = new Chart(ctx2, {
     type: 'bar',
     data: {
       labels: bKeys.map(k => '$' + k),
-      datasets: [{ data: bKeys.map(k => buckets[k]), backgroundColor: bKeys.map(k => k >= 0 ? '#22c55e40' : '#ef444440'), borderColor: bKeys.map(k => k >= 0 ? '#22c55e' : '#ef4444'), borderWidth: 1, borderRadius: 4 }]
+      datasets: [{ data: bKeys.map(k => buckets[k]), backgroundColor: bKeys.map(k => Number(k) >= 0 ? '#22c55e40' : '#ef444440'), borderColor: bKeys.map(k => Number(k) >= 0 ? '#22c55e' : '#ef4444'), borderWidth: 1, borderRadius: 4 }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
@@ -1066,7 +1199,6 @@ function renderAnalytics() {
     }
   });
 
-  // Heatmap
   renderHeatmap();
 }
 
@@ -1125,7 +1257,6 @@ function renderInsights() {
   const avgWin = wins.length ? grossWin / wins.length : 0;
   const avgLoss = losses.length ? Math.abs(losses.reduce((s, t) => s + t.pnl, 0)) / losses.length : 0;
 
-  // Best setup
   const setupMap = {};
   trades.forEach(t => {
     if (!t.setup) return;
@@ -1135,10 +1266,9 @@ function renderInsights() {
     if (t.outcome === 'win') setupMap[t.setup].w++;
   });
   const setupEntries = Object.entries(setupMap).filter(([, v]) => v.t >= 2);
-  const bestSetup = setupEntries.sort((a, b) => (b[1].w / b[1].t) - (a[1].w / a[1].t))[0];
-  const worstSetup = setupEntries.sort((a, b) => (a[1].w / a[1].t) - (b[1].w / b[1].t))[0];
+  const bestSetup = [...setupEntries].sort((a, b) => (b[1].w / b[1].t) - (a[1].w / a[1].t))[0];
+  const worstSetup = [...setupEntries].sort((a, b) => (a[1].w / a[1].t) - (b[1].w / b[1].t))[0];
 
-  // Emotion analysis
   const emotionWR = {};
   trades.forEach(t => {
     if (!t.emotion) return;
@@ -1147,81 +1277,52 @@ function renderInsights() {
     if (t.outcome === 'win') emotionWR[t.emotion].w++;
   });
 
-  // Best pair
   const pairPnl = {};
   trades.forEach(t => { pairPnl[t.pair] = (pairPnl[t.pair] || 0) + t.pnl; });
-  const bestPair = Object.entries(pairPnl).sort((a, b) => b[1] - a[1])[0];
-  const worstPair = Object.entries(pairPnl).sort((a, b) => a[1] - b[1])[0];
-
-  // Best session
-  const sessionMap = {};
-  trades.forEach(t => {
-    if (!t.session) return;
-    if (!sessionMap[t.session]) sessionMap[t.session] = { w: 0, t: 0 };
-    sessionMap[t.session].t++;
-    if (t.outcome === 'win') sessionMap[t.session].w++;
-  });
+  const pairEntries = Object.entries(pairPnl);
+  const bestPair = [...pairEntries].sort((a, b) => b[1] - a[1])[0];
+  const worstPair = [...pairEntries].sort((a, b) => a[1] - b[1])[0];
 
   let html = '';
+  if (wr >= 60) html += insightCard('strength', 'Strong Win Rate', `Your win rate of <span class="insight-metric">${wr.toFixed(1)}%</span> is above 60%. Solid edge. Focus on not overtrading to preserve it.`);
+  else if (wr < 45) html += insightCard('weakness', 'Win Rate Needs Work', `Current win rate is <span class="insight-metric">${wr.toFixed(1)}%</span>. Tighten entry criteria — only A+ setups with full confluence.`);
 
-  // Win rate insight
-  if (wr >= 60) {
-    html += insightCard('strength', 'Strong Win Rate', `Your win rate of <span class="insight-metric">${wr.toFixed(1)}%</span> is above 60%. This is solid. Focus on maintaining discipline and not overtrading to preserve this edge.`);
-  } else if (wr < 45) {
-    html += insightCard('weakness', 'Win Rate Needs Work', `Current win rate is <span class="insight-metric">${wr.toFixed(1)}%</span>. Consider tightening your entry criteria — only take A+ setups with full confluence. Are you entering PRZ with CHoCH confirmation?`);
-  }
+  if (pf >= 2) html += insightCard('strength', 'Excellent Profit Factor', `Profit factor of <span class="insight-metric">${pf === 999 ? '∞' : pf.toFixed(2)}</span> — strong returns per dollar risked.`);
+  else if (pf < 1) html += insightCard('weakness', 'Negative Profit Factor', `Profit factor <span class="insight-metric">${pf.toFixed(2)}</span> — losses outweigh wins. Cut losers earlier and let winners run.`);
 
-  // Profit factor
-  if (pf >= 2) {
-    html += insightCard('strength', 'Excellent Profit Factor', `Profit factor of <span class="insight-metric">${pf.toFixed(2)}</span> means your strategy is generating strong returns per dollar risked. Keep protecting your winners.`);
-  } else if (pf < 1) {
-    html += insightCard('weakness', 'Negative Profit Factor', `Profit factor of <span class="insight-metric">${pf.toFixed(2)}</span> indicates losses outweigh wins. Focus on cutting losers earlier and letting winners run. Review your TP management.`);
-  }
-
-  // Win/loss ratio
-  if (avgLoss > 0 && avgWin / avgLoss < 1.5) {
-    html += insightCard('weakness', 'Avg Win Too Close to Avg Loss', `Your avg win ($${avgWin.toFixed(2)}) vs avg loss ($${avgLoss.toFixed(2)}) ratio is <span class="insight-metric">${(avgWin / avgLoss).toFixed(2)}:1</span>. Target at least 1.5:1. Let your 1:2+ R:R setups play out fully.`);
-  } else if (avgLoss > 0) {
-    html += insightCard('strength', 'Healthy Risk/Reward Ratio', `Your avg win to avg loss ratio is <span class="insight-metric">${(avgWin / avgLoss).toFixed(2)}:1</span>. You're managing risk well.`);
-  }
+  if (avgLoss > 0 && avgWin / avgLoss < 1.5) html += insightCard('weakness', 'Avg Win Too Close to Avg Loss', `Win/loss ratio is <span class="insight-metric">${(avgWin / avgLoss).toFixed(2)}:1</span>. Target at least 1.5:1. Let your 1:2+ R:R plays fully develop.`);
+  else if (avgLoss > 0) html += insightCard('strength', 'Healthy Risk/Reward', `Avg win/loss ratio is <span class="insight-metric">${(avgWin / avgLoss).toFixed(2)}:1</span>. You're managing risk well.`);
 
   if (bestSetup) {
     const bwr = (bestSetup[1].w / bestSetup[1].t * 100).toFixed(0);
-    html += insightCard('pattern', `Best Setup: ${bestSetup[0]}`, `<span class="insight-metric">${bwr}%</span> win rate across ${bestSetup[1].t} trades. This setup is working well with your current market reads. Consider sizing up slightly on these.`);
+    html += insightCard('pattern', `Best Setup: ${bestSetup[0]}`, `<span class="insight-metric">${bwr}%</span> win rate across ${bestSetup[1].t} trades. This setup is working. Consider sizing up here.`);
   }
-  if (worstSetup && worstSetup[0] !== bestSetup?.[0]) {
+  if (worstSetup && bestSetup && worstSetup[0] !== bestSetup[0]) {
     const wwr = (worstSetup[1].w / worstSetup[1].t * 100).toFixed(0);
-    html += insightCard('weakness', `Weakest Setup: ${worstSetup[0]}`, `Only <span class="insight-metric">${wwr}%</span> win rate. Review if your entry criteria for this setup is clearly defined. Are you entering too early before CHoCH confirmation?`);
+    html += insightCard('weakness', `Weakest Setup: ${worstSetup[0]}`, `Only <span class="insight-metric">${wwr}%</span> win rate. Review entry criteria — are you entering before CHoCH confirmation?`);
   }
 
-  if (bestPair) html += insightCard('strength', `Best Performing Pair: ${bestPair[0]}`, `Total P&L of <span class="insight-metric">+$${bestPair[1].toFixed(2)}</span>. You have a strong read on this market. Prioritize this pair when setups align.`);
-  if (worstPair && worstPair[0] !== bestPair?.[0] && worstPair[1] < 0) {
-    html += insightCard('weakness', `Avoid Over-trading: ${worstPair[0]}`, `Total P&L of <span class="insight-metric">-$${Math.abs(worstPair[1]).toFixed(2)}</span>. Either reduce exposure here or wait for higher quality setups on this pair.`);
+  if (bestPair) html += insightCard('strength', `Best Pair: ${bestPair[0]}`, `Total P&L of <span class="insight-metric">${bestPair[1] >= 0 ? '+' : ''}$${bestPair[1].toFixed(2)}</span>. You read this market well. Prioritize it when setups align.`);
+  if (worstPair && bestPair && worstPair[0] !== bestPair[0] && worstPair[1] < 0) {
+    html += insightCard('weakness', `Caution on: ${worstPair[0]}`, `Total P&L of <span class="insight-metric">-$${Math.abs(worstPair[1]).toFixed(2)}</span>. Reduce exposure or wait for higher-quality setups on this pair.`);
   }
 
   const emotionEntries = Object.entries(emotionWR).filter(([, v]) => v.t >= 2);
   if (emotionEntries.length) {
-    const bestEm = emotionEntries.sort((a, b) => (b[1].w / b[1].t) - (a[1].w / a[1].t))[0];
-    const worstEm = emotionEntries.sort((a, b) => (a[1].w / a[1].t) - (b[1].w / b[1].t))[0];
-    if (bestEm) html += insightCard('tip', `Best Trading State: ${bestEm[0]}`, `Your win rate when feeling <strong>${bestEm[0]}</strong> is <span class="insight-metric">${(bestEm[1].w / bestEm[1].t * 100).toFixed(0)}%</span>. Use this as your benchmark for when to trade.`);
-    if (worstEm && worstEm[0] !== bestEm?.[0]) html += insightCard('weakness', `Avoid Trading When: ${worstEm[0]}`, `Win rate drops to <span class="insight-metric">${(worstEm[1].w / worstEm[1].t * 100).toFixed(0)}%</span> in this state. Log this in your journal and build a pre-trade checklist to prevent emotional entries.`);
+    const bestEm = [...emotionEntries].sort((a, b) => (b[1].w / b[1].t) - (a[1].w / a[1].t))[0];
+    const worstEm = [...emotionEntries].sort((a, b) => (a[1].w / a[1].t) - (b[1].w / b[1].t))[0];
+    if (bestEm) html += insightCard('tip', `Best Trading State: ${bestEm[0]}`, `Win rate of <span class="insight-metric">${(bestEm[1].w / bestEm[1].t * 100).toFixed(0)}%</span> when feeling <strong>${bestEm[0]}</strong>. Use this as your benchmark.`);
+    if (worstEm && bestEm && worstEm[0] !== bestEm[0]) html += insightCard('weakness', `Avoid Trading When: ${worstEm[0]}`, `Win rate drops to <span class="insight-metric">${(worstEm[1].w / worstEm[1].t * 100).toFixed(0)}%</span>. Build a pre-trade checklist to prevent emotional entries.`);
   }
 
-  html += insightCard('tip', 'Strategy Refinement Tip', `Based on your data: focus on <span class="insight-metric">${wins.length > 0 ? (Object.keys(pairPnl)[0] || 'your strongest pair') : 'building your edge'}</span> with full HTF + LTF confluence. Track 5-10 more trades to get statistically meaningful insights.`);
-
-  container.innerHTML = html || '<div class="empty"><p>Not enough data yet for specific insights.</p></div>';
+  html += insightCard('tip', 'Keep Logging', `You have <span class="insight-metric">${trades.length}</span> trades logged. At 20+ trades, statistical patterns become more reliable. Consistency in logging = better insights.`);
+  container.innerHTML = html || '<div class="empty"><p>Not enough data for insights yet.</p></div>';
 }
 
 function insightCard(type, title, body) {
   const tagMap = { strength: 'tag-strength', weakness: 'tag-weakness', pattern: 'tag-pattern', tip: 'tag-tip' };
   const labelMap = { strength: 'Strength', weakness: 'Improve', pattern: 'Pattern', tip: 'Tip' };
-  return `<div class="insight-card">
-    <div class="insight-header">
-      <span class="insight-tag ${tagMap[type]}">${labelMap[type]}</span>
-      <span class="insight-title">${title}</span>
-    </div>
-    <div class="insight-body">${body}</div>
-  </div>`;
+  return `<div class="insight-card"><div class="insight-header"><span class="insight-tag ${tagMap[type]}">${labelMap[type]}</span><span class="insight-title">${title}</span></div><div class="insight-body">${body}</div></div>`;
 }
 
 // ============ JOURNAL ============
@@ -1243,7 +1344,7 @@ function renderJournal() {
           <button class="btn" style="padding:5px 10px;font-size:11px;color:var(--red);border-color:var(--red-dim)" onclick="deleteJournal(${i})">Delete</button>
         </div>
       </div>
-      ${e.bias ? `<div style="margin-bottom:10px"><span style="font-size:11px;font-family:var(--font-mono);color:var(--text3)">MARKET BIAS: </span><span style="font-size:12px;color:${e.bias==='bullish'?'var(--green)':e.bias==='bearish'?'var(--red)':'var(--text2)'};font-weight:500;text-transform:uppercase">${e.bias}</span></div>` : ''}
+      ${e.bias ? `<div style="margin-bottom:10px"><span style="font-size:11px;font-family:var(--font-mono);color:var(--text3)">BIAS: </span><span style="font-size:12px;color:${e.bias==='bullish'?'var(--green)':e.bias==='bearish'?'var(--red)':'var(--text2)'};font-weight:500;text-transform:uppercase">${e.bias}</span></div>` : ''}
       <div style="font-size:13px;color:var(--text2);line-height:1.7;background:var(--bg3);border-radius:var(--radius);padding:12px">${e.text.replace(/\n/g,'<br>')}</div>
     </div>
   `).join('');
@@ -1256,8 +1357,7 @@ function addJournalEntry() {
     <h2>New Journal Entry</h2>
     <div style="display:flex;flex-direction:column;gap:14px">
       <div class="form-group"><label>Title</label><input type="text" id="j-title" placeholder="e.g. Missed the London open setup"></div>
-      <div class="form-group">
-        <label>Market Bias</label>
+      <div class="form-group"><label>Market Bias</label>
         <select id="j-bias"><option value="">Select bias</option><option value="bullish">Bullish</option><option value="bearish">Bearish</option><option value="neutral">Neutral / Ranging</option></select>
       </div>
       <div class="form-group">
@@ -1313,22 +1413,20 @@ function renderAll() {
   if (activePage === 'page-trades') renderTradeTable();
   if (activePage === 'page-analytics') renderAnalytics();
   if (activePage === 'page-insights') renderInsights();
-  // update sidebar PnL
   const total = trades.reduce((s, t) => s + t.pnl, 0);
-  document.getElementById('sidebar-pnl').textContent = (total >= 0 ? '+$' : '-$') + Math.abs(total).toFixed(2);
-  document.getElementById('sidebar-pnl').className = 'pnl-pill-val ' + (total >= 0 ? 'up' : 'down');
+  const sp = document.getElementById('sidebar-pnl');
+  sp.textContent = (total >= 0 ? '+$' : '-$') + Math.abs(total).toFixed(2);
+  sp.className = 'pnl-pill-val ' + (total >= 0 ? 'up' : 'down');
 }
 
 // ============ EXPORT / IMPORT ============
 function exportJSON() {
-  const data = { version: 1, exportedAt: new Date().toISOString(), trades, journalEntries };
+  const data = { version: 2, exportedAt: new Date().toISOString(), trades, journalEntries };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
+  const a = document.createElement('a'); a.href = url;
   a.download = 'tradelog-backup-' + new Date().toISOString().slice(0,10) + '.json';
-  a.click();
-  URL.revokeObjectURL(url);
+  a.click(); URL.revokeObjectURL(url);
   showToast('Backup exported successfully');
 }
 
@@ -1344,11 +1442,9 @@ function exportCSV() {
   const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
   const blob = new Blob([csv], { type: 'text/csv' });
   const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
+  const a = document.createElement('a'); a.href = url;
   a.download = 'tradelog-trades-' + new Date().toISOString().slice(0,10) + '.csv';
-  a.click();
-  URL.revokeObjectURL(url);
+  a.click(); URL.revokeObjectURL(url);
   showToast('CSV exported — ' + trades.length + ' trades');
 }
 
@@ -1369,9 +1465,7 @@ function importJSON(input) {
       const newTrades = (data.trades||[]).filter(t => !existingIds.has(t.id));
       const existingDates = new Set(journalEntries.map(j => j.date));
       const newJournal = (data.journalEntries||[]).filter(j => !existingDates.has(j.date));
-      if (!newTrades.length && !newJournal.length) {
-        showToast('All records already exist — nothing new imported', true); return;
-      }
+      if (!newTrades.length && !newJournal.length) { showToast('All records already exist', true); return; }
       trades = [...trades, ...newTrades].sort((a,b) => new Date(b.date)-new Date(a.date));
       journalEntries = [...journalEntries, ...newJournal].sort((a,b) => new Date(b.date)-new Date(a.date));
       localStorage.setItem('tradelog_trades', JSON.stringify(trades));
@@ -1386,7 +1480,8 @@ function importJSON(input) {
 function showToast(msg, isError) {
   const ex = document.getElementById('toast'); if (ex) ex.remove();
   const t = document.createElement('div');
-  t.id = 'toast'; t.textContent = (isError ? '\u2717 ' : '\u2713 ') + msg;
+  t.id = 'toast';
+  t.textContent = (isError ? '✕ ' : '✓ ') + msg;
   t.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:' + (isError?'var(--red-bg)':'var(--bg4)') + ';color:' + (isError?'var(--red)':'var(--green)') + ';border:1px solid ' + (isError?'var(--red-dim)':'var(--green-dim)') + ';padding:10px 18px;border-radius:var(--radius-lg);font-size:13px;font-family:var(--font-mono);box-shadow:0 4px 24px rgba(0,0,0,0.4);transition:opacity 0.4s;';
   document.body.appendChild(t);
   setTimeout(() => { t.style.opacity='0'; setTimeout(()=>t.remove(),400); }, 3000);
@@ -1394,7 +1489,7 @@ function showToast(msg, isError) {
 
 // ============ INIT ============
 renderDashboard();
-if (!journalEntries.length) renderJournal();
+renderJournal();
 </script>
 </body>
 </html>
